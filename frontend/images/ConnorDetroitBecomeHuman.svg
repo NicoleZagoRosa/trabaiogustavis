@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradConnor" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="50%" stop-color="#0f2b48"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="accentConnor" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00d2ff"/>
+      <stop offset="100%" stop-color="#3a7bd5"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Fundo da Carta -->
+  <rect width="400" height="560" fill="url(#bgGradConnor)" rx="16"/>
+  <rect x="12" y="12" width="376" height="536" fill="none" stroke="#00d2ff" stroke-width="2" stroke-opacity="0.4" rx="12"/>
+  
+  <!-- Grade Cyberpunk / Android LED -->
+  <circle cx="200" cy="190" r="110" fill="none" stroke="#00d2ff" stroke-width="3" stroke-dasharray="8 6" opacity="0.6"/>
+  <circle cx="200" cy="190" r="85" fill="#00d2ff" fill-opacity="0.1"/>
+  <circle cx="200" cy="190" r="12" fill="#00d2ff" filter="drop-shadow(0 0 8px #00d2ff)"/>
+
+  <!-- Ícone Android Cyberpunk (Triângulo Cyber) -->
+  <polygon points="200,120 250,210 150,210" fill="none" stroke="#00d2ff" stroke-width="4"/>
+  <text x="200" y="245" font-family="'Segoe UI', Roboto, sans-serif" font-size="12" font-weight="700" fill="#00d2ff" text-anchor="middle" letter-spacing="4">RK800 #313 248 317</text>
+
+  <!-- Informações do Placeholder -->
+  <rect x="30" y="320" width="340" height="190" fill="#050e1a" fill-opacity="0.85" rx="10" stroke="#00d2ff" stroke-width="1.5" stroke-opacity="0.5"/>
+  
+  <text x="200" y="355" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#8892b0" text-anchor="middle" letter-spacing="2">PLACEHOLDER DE IMAGEM</text>
+  <text x="200" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-size="24" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="1">CONNOR</text>
+  <text x="200" y="415" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#00d2ff" text-anchor="middle">Detroit: Become Human</text>
+
+  <rect x="50" y="435" width="300" height="1" fill="#00d2ff" opacity="0.3"/>
+  
+  <text x="200" y="460" font-family="'Courier New', monospace" font-size="12" fill="#a0aec0" text-anchor="middle">ConnorDetroitBecomeHuman</text>
+  <text x="200" y="485" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#718096" text-anchor="middle">Substituível por JPG/PNG a qualquer momento</text>
+</svg>

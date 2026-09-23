@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradBayo" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12061f"/>
+      <stop offset="50%" stop-color="#24083d"/>
+      <stop offset="100%" stop-color="#3d0d66"/>
+    </linearGradient>
+    <radialGradient id="magicBayo" cx="50%" cy="30%" r="45%">
+      <stop offset="0%" stop-color="#d946ef" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#12061f" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fundo da Carta -->
+  <rect width="400" height="560" fill="url(#bgGradBayo)" rx="16"/>
+  <rect width="400" height="560" fill="url(#magicBayo)" rx="16"/>
+  <rect x="12" y="12" width="376" height="536" fill="none" stroke="#d946ef" stroke-width="2" stroke-opacity="0.5" rx="12"/>
+
+  <!-- Rosa Mística / Umbra Witch Circle -->
+  <circle cx="200" cy="180" r="105" fill="none" stroke="#e879f9" stroke-width="2" stroke-dasharray="12 6" opacity="0.6"/>
+  <circle cx="200" cy="180" r="75" fill="none" stroke="#f43f5e" stroke-width="2" opacity="0.5"/>
+  <polygon points="200,95 220,160 285,180 220,200 200,265 180,200 115,180 180,160" fill="#a855f7" fill-opacity="0.3" stroke="#f472b6" stroke-width="3"/>
+  <circle cx="200" cy="180" r="15" fill="#f43f5e" filter="drop-shadow(0 0 10px #f43f5e)"/>
+
+  <text x="200" y="255" font-family="'Didot', serif" font-size="13" font-style="italic" fill="#fbcfe8" text-anchor="middle" letter-spacing="3">UMBRA WITCH</text>
+
+  <!-- Informações do Placeholder -->
+  <rect x="30" y="320" width="340" height="190" fill="#0d0218" fill-opacity="0.9" rx="10" stroke="#d946ef" stroke-width="1.5" stroke-opacity="0.5"/>
+  
+  <text x="200" y="355" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#c084fc" text-anchor="middle" letter-spacing="2">PLACEHOLDER DE IMAGEM</text>
+  <text x="200" y="388" font-family="'Didot', 'Georgia', serif" font-size="26" font-weight="800" fill="#ffffff" text-anchor="middle" letter-spacing="2">BAYONETTA</text>
+  <text x="200" y="415" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#e879f9" text-anchor="middle">Bayonetta</text>
+
+  <rect x="50" y="435" width="300" height="1" fill="#d946ef" opacity="0.3"/>
+  
+  <text x="200" y="460" font-family="'Courier New', monospace" font-size="12" fill="#c084fc" text-anchor="middle">Bayonetta</text>
+  <text x="200" y="485" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#9333ea" text-anchor="middle">Substituível por JPG/PNG a qualquer momento</text>
+</svg>

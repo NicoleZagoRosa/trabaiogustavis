@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradArthur" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2a0d0d"/>
+      <stop offset="50%" stop-color="#4a1515"/>
+      <stop offset="100%" stop-color="#7a1f1d"/>
+    </linearGradient>
+    <radialGradient id="sunArthur" cx="50%" cy="35%" r="40%">
+      <stop offset="0%" stop-color="#ff7b25" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#4a1515" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fundo da Carta -->
+  <rect width="400" height="560" fill="url(#bgGradArthur)" rx="16"/>
+  <rect width="400" height="560" fill="url(#sunArthur)" rx="16"/>
+  <rect x="12" y="12" width="376" height="536" fill="none" stroke="#ff4500" stroke-width="2" stroke-opacity="0.5" rx="12"/>
+
+  <!-- Ícone Western / Estrela de Xerife / Chapéu estilizado -->
+  <circle cx="200" cy="180" r="100" fill="none" stroke="#ff7b25" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+  <polygon points="200,105 218,155 270,160 230,195 242,245 200,218 158,245 170,195 130,160 182,155" fill="#ff7b25" fill-opacity="0.25" stroke="#ff7b25" stroke-width="3"/>
+  <circle cx="200" cy="175" r="18" fill="#ff4500" filter="drop-shadow(0 0 10px #ff4500)"/>
+
+  <text x="200" y="255" font-family="'Georgia', serif" font-size="13" font-weight="700" fill="#ffb48f" text-anchor="middle" letter-spacing="3">VAN DER LINDE GANG</text>
+
+  <!-- Informações do Placeholder -->
+  <rect x="30" y="320" width="340" height="190" fill="#180707" fill-opacity="0.9" rx="10" stroke="#ff4500" stroke-width="1.5" stroke-opacity="0.6"/>
+  
+  <text x="200" y="355" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#d97768" text-anchor="middle" letter-spacing="2">PLACEHOLDER DE IMAGEM</text>
+  <text x="200" y="388" font-family="'Georgia', serif" font-size="23" font-weight="800" fill="#ffffff" text-anchor="middle">ARTHUR MORGAN</text>
+  <text x="200" y="415" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#ff7b25" text-anchor="middle">Red Dead Redemption 2</text>
+
+  <rect x="50" y="435" width="300" height="1" fill="#ff7b25" opacity="0.3"/>
+  
+  <text x="200" y="460" font-family="'Courier New', monospace" font-size="12" fill="#d8a47f" text-anchor="middle">ArthurMorganRedDeadRedemption2</text>
+  <text x="200" y="485" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#a87158" text-anchor="middle">Substituível por JPG/PNG a qualquer momento</text>
+</svg>

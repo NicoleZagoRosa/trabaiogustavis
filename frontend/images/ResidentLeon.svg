@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 560" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGradLeon" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#05101a"/>
+      <stop offset="50%" stop-color="#0c2033"/>
+      <stop offset="100%" stop-color="#14314c"/>
+    </linearGradient>
+    <radialGradient id="biohazardLeon" cx="50%" cy="32%" r="45%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#05101a" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Fundo da Carta -->
+  <rect width="400" height="560" fill="url(#bgGradLeon)" rx="16"/>
+  <rect width="400" height="560" fill="url(#biohazardLeon)" rx="16"/>
+  <rect x="12" y="12" width="376" height="536" fill="none" stroke="#38bdf8" stroke-width="2" stroke-opacity="0.5" rx="12"/>
+
+  <!-- Emblema R.P.D. / Biohazard estilizado -->
+  <circle cx="200" cy="180" r="105" fill="none" stroke="#38bdf8" stroke-width="2" stroke-dasharray="8 4" opacity="0.6"/>
+  <!-- Escudo Policial RPD -->
+  <path d="M200,95 L255,130 L255,200 Q200,265 200,265 Q145,200 145,130 Z" fill="#0369a1" fill-opacity="0.3" stroke="#38bdf8" stroke-width="3"/>
+  <circle cx="200" cy="165" r="16" fill="#0284c7" filter="drop-shadow(0 0 10px #38bdf8)"/>
+  <text x="200" y="210" font-family="'Impact', sans-serif" font-size="16" fill="#ffffff" text-anchor="middle" letter-spacing="2">R.P.D.</text>
+
+  <!-- Informações do Placeholder -->
+  <rect x="30" y="320" width="340" height="190" fill="#030b12" fill-opacity="0.9" rx="10" stroke="#38bdf8" stroke-width="1.5" stroke-opacity="0.5"/>
+  
+  <text x="200" y="355" font-family="'Segoe UI', Roboto, sans-serif" font-size="11" font-weight="600" fill="#7dd3fc" text-anchor="middle" letter-spacing="2">PLACEHOLDER DE IMAGEM</text>
+  <text x="200" y="388" font-family="'Segoe UI', Roboto, sans-serif" font-size="22" font-weight="800" fill="#ffffff" text-anchor="middle">LEON S. KENNEDY</text>
+  <text x="200" y="415" font-family="'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="600" fill="#38bdf8" text-anchor="middle">Resident Evil</text>
+
+  <rect x="50" y="435" width="300" height="1" fill="#38bdf8" opacity="0.3"/>
+  
+  <text x="200" y="460" font-family="'Courier New', monospace" font-size="12" fill="#93c5fd" text-anchor="middle">ResidentLeon</text>
+  <text x="200" y="485" font-family="'Segoe UI', Roboto, sans-serif" font-size="10" fill="#60a5fa" text-anchor="middle">Substituível por JPG/PNG a qualquer momento</text>
+</svg>

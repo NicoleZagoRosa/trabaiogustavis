@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coleção de Cartas de Personagens — TCG Archive</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Barra de Notificações / Toasts -->
+  <div id="toastContainer" class="toast-container" aria-live="polite"></div>
+
+  <!-- Header & Navegação -->
+  <header class="site-header">
+    <div class="header-inner container">
+      <div class="brand">
+        <div class="brand-emblem">✦</div>
+        <div class="brand-text">
+          <span class="brand-subtitle">CATÁLOGO EXCLUSIVO</span>
+          <h1 class="brand-title">GAME CARDS ARCHIVE</h1>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button id="btnOpenAddModal" class="btn btn-primary" title="Adicionar novo personagem">
+          <span class="btn-icon">＋</span> Nova Carta
+        </button>
+        <button id="btnReload" class="btn btn-secondary" title="Recarregar catálogo da API">
+          <span class="btn-icon">↻</span> Atualizar
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="main-content container">
+
+    <!-- SEÇÃO: Carrossel / Slider de Destaques -->
+    <section class="slider-section" aria-label="Personagens em Destaque">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <span class="tag-accent">DESTAQUES</span>
+          <h2 class="section-title">Galeria de Cartas Raras</h2>
+        </div>
+        <div class="slider-controls-top">
+          <button id="btnAutoPlayToggle" class="btn-pill" title="Pausar ou Retomar Autoplay">
+            <span id="autoplayStatusIcon">⏸</span> Autoplay
+          </button>
+        </div>
+      </div>
+
+      <!-- Container do Carrossel -->
+      <div class="carousel-wrapper" id="carouselWrapper">
+        <button class="carousel-arrow prev" id="carouselPrevBtn" aria-label="Carta Anterior" title="Anterior (Seta Esquerda)">❮</button>
+        
+        <div class="carousel-viewport" id="carouselViewport" tabindex="0" role="region" aria-roledescription="carousel" aria-label="Slider de Personagens">
+          <div class="carousel-track" id="carouselTrack">
+            <!-- Slides gerados dinamicamente via JavaScript -->
+          </div>
+        </div>
+
+        <button class="carousel-arrow next" id="carouselNextBtn" aria-label="Próxima Carta" title="Próxima (Seta Direita)">❯</button>
+      </div>
+
+      <!-- Indicadores de Posição (Dots) -->
+      <div class="carousel-dots" id="carouselDots" role="tablist" aria-label="Indicadores do Carrossel"></div>
+    </section>
+
+    <!-- SEÇÃO: Filtros e Controles -->
+    <section class="filters-section" aria-label="Filtros de Personagens">
+      <div class="filters-card">
+        <div class="filter-item search-wrap">
+          <label for="searchInput" class="filter-label">Buscar Personagem</label>
+          <div class="input-with-icon">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="searchInput" placeholder="Digite o nome ou jogo..." autocomplete="off" />
+          </div>
+        </div>
+
+        <div class="filter-item">
+          <label for="gameSelect" class="filter-label">Filtrar por Jogo</label>
+          <select id="gameSelect">
+            <option value="">Todos os Jogos</option>
+          </select>
+        </div>
+
+        <div class="filter-item">
+          <label for="raritySelect" class="filter-label">Filtrar por Raridade</label>
+          <select id="raritySelect">
+            <option value="">Todas as Raridades</option>
+            <option value="Common">Common (Comum)</option>
+            <option value="Uncommon">Uncommon (Incomum)</option>
+            <option value="Rare">Rare (Raro)</option>
+            <option value="Epic">Epic (Épico)</option>
+            <option value="Legendary">Legendary (Lendário)</option>
+            <option value="Mythic">Mythic (Mítico)</option>
+          </select>
+        </div>
+
+        <div class="filter-actions">
+          <button id="btnResetFilters" class="btn btn-outline" title="Limpar todos os filtros">
+            Limpar Filtros
+          </button>
+        </div>
+      </div>
+
+      <!-- Status e Contador -->
+      <div class="filter-summary">
+        <span id="resultsCounter" class="results-badge">Carregando cartas...</span>
+        <span class="filter-tip">Dica: Passe o mouse ou toque na carta para revelar os dados ocultos!</span>
+      </div>
+    </section>
+
+    <!-- SEÇÃO: Catálogo / Grade de Cartas -->
+    <section class="catalog-section" aria-label="Catálogo Geral">
+      <!-- Container de Feedback de Erro da API -->
+      <div id="apiErrorBanner" class="api-error-banner hidden" role="alert">
+        <div class="error-icon">⚠️</div>
+        <div class="error-body">
+          <h3 class="error-title">Falha de Comunicação com a API</h3>
+          <p id="apiErrorMessage" class="error-description">Não foi possível carregar os personagens do servidor.</p>
+        </div>
+        <button id="btnRetryApi" class="btn btn-primary btn-sm">Tentar Novamente</button>
+      </div>
+
+      <!-- Grade de Cartas -->
+      <div class="cards-grid" id="cardsGrid">
+        <!-- Cards gerados via script.js -->
+      </div>
+
+      <!-- Estado Vazio -->
+      <div id="emptyState" class="empty-state hidden">
+        <div class="empty-icon">🃏</div>
+        <h3>Nenhum personagem encontrado</h3>
+        <p>Tente ajustar os filtros ou a busca para localizar outras cartas.</p>
+        <button id="btnClearSearch" class="btn btn-outline">Ver Todas as Cartas</button>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: Adicionar Nova Carta (Para testes completos do POST/PUT) -->
+  <div id="cardModal" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modalTitle" class="modal-title">Cadastrar Nova Carta</h3>
+        <button id="btnCloseModal" class="modal-close-btn" aria-label="Fechar">&times;</button>
+      </div>
+      <form id="characterForm" class="modal-form">
+        <input type="hidden" id="formCharId" />
+
+        <div class="form-group">
+          <label for="charName">Nome do Personagem *</label>
+          <input type="text" id="charName" required placeholder="Ex: Geralt of Rivia" />
+        </div>
+
+        <div class="form-group">
+          <label for="charGame">Jogo *</label>
+          <input type="text" id="charGame" required placeholder="Ex: The Witcher 3" />
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="charReleaseDate">Data de Lançamento *</label>
+            <input type="date" id="charReleaseDate" required />
+          </div>
+
+          <div class="form-group">
+            <label for="charRarity">Raridade *</label>
+            <select id="charRarity" required>
+              <option value="Common">Common (Cinza)</option>
+              <option value="Uncommon">Uncommon (Verde)</option>
+              <option value="Rare">Rare (Azul)</option>
+              <option value="Epic">Epic (Roxo)</option>
+              <option value="Legendary" selected>Legendary (Dourado)</option>
+              <option value="Mythic">Mythic (Vermelho/Laranja)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="charPrice">Preço (R$) *</label>
+            <input type="number" id="charPrice" step="0.01" min="0" required placeholder="150.00" />
+          </div>
+
+          <div class="form-group">
+            <label for="charImage">Identificador do Placeholder *</label>
+            <input type="text" id="charImage" required placeholder="Ex: ConnorDetroitBecomeHuman" />
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button type="button" id="btnCancelModal" class="btn btn-secondary">Cancelar</button>
+          <button type="submit" id="btnSaveChar" class="btn btn-primary">Salvar Carta</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-content">
+      <p>© 2026 Game Cards Archive — Desenvolvido com Node.js, MongoDB e Vanilla JS puro.</p>
+      <div class="footer-links">
+        <a href="/api/characters" target="_blank" rel="noopener">API REST</a>
+        <a href="/api/health" target="_blank" rel="noopener">Status</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
