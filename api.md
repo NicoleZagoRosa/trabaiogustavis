@@ -325,7 +325,7 @@ Auxilia o preenchimento dinâmico de filtros no cliente.
     "data": [
       "Bayonetta",
       "Detroit: Become Human",
-      "DOOM",
+      "Legends Of Runeterra",
       "Red Dead Redemption 2",
       "Resident Evil"
     ]

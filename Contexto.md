@@ -51,12 +51,12 @@ trabaiogustavis/
 │   ├── index.html           # Interface principal da coleção
 │   ├── style.css            # Estilos, temas de raridades e animações
 │   ├── script.js            # Lógica client-side e integração
-│   └── images/              # Placeholders SVG dos personagens
-│       ├── ConnorDetroitBecomeHuman.svg
-│       ├── ArthurMorganRedDeadRedemption2.svg
-│       ├── DoomSlayerDoom.svg
-│       ├── Bayonetta.svg
-│       └── ResidentLeon.svg
+│   └── images/              # Imagens dos personagens em JPG
+│       ├── ArthurMorganRedDeadRedemption2.jpg
+│       ├── Bayonetta.jpg
+│       ├── ConnorDetroitBecomeHuman.jpg
+│       ├── ResidentLeon.jpg
+│       └── VeigarMecha.jpg
 ├── vercel.json              # Configuração de deploy da Vercel
 ├── Roadmap.md               # Rastreamento de etapas
 ├── Contexto.md              # Este arquivo de contexto

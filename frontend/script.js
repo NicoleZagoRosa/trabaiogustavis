@@ -26,7 +26,7 @@ const FALLBACK_CHARACTERS = [
     name: 'Connor',
     game: 'Detroit: Become Human',
     releaseDate: '2018-05-25',
-    image: 'ConnorDetroitBecomeHuman',
+    image: 'ConnorDetroitBecomeHuman.jpg',
     rarity: 'Legendary',
     price: 150.00,
   },
@@ -35,7 +35,7 @@ const FALLBACK_CHARACTERS = [
     name: 'Arthur Morgan',
     game: 'Red Dead Redemption 2',
     releaseDate: '2018-10-26',
-    image: 'ArthurMorganRedDeadRedemption2',
+    image: 'ArthurMorganRedDeadRedemption2.jpg',
     rarity: 'Mythic',
     price: 250.00,
   },
@@ -44,7 +44,7 @@ const FALLBACK_CHARACTERS = [
     name: 'Veigar',
     game: 'Legends Of Runeterra',
     releaseDate: '2021-08-25',
-    image: 'VeigarMecha',
+    image: 'VeigarMecha.jpg',
     rarity: 'Mythic',
     price: 250.00,
   },
@@ -53,7 +53,7 @@ const FALLBACK_CHARACTERS = [
     name: 'Bayonetta',
     game: 'Bayonetta',
     releaseDate: '2009-10-29',
-    image: 'Bayonetta',
+    image: 'Bayonetta.jpg',
     rarity: 'Legendary',
     price: 200.00,
   },
@@ -62,7 +62,7 @@ const FALLBACK_CHARACTERS = [
     name: 'Leon S. Kennedy',
     game: 'Resident Evil',
     releaseDate: '1998-01-21',
-    image: 'ResidentLeon',
+    image: 'ResidentLeon.jpg',
     rarity: 'Rare',
     price: 190.00,
   },
@@ -120,14 +120,33 @@ function formatReleaseYear(dateStr) {
 
 /**
  * Utilitário: Obter caminho relativo da imagem do personagem
- * Dá suporte aos arquivos SVG criados e prevê substituição por JPG/PNG
+ * Garante resolução correta de arquivos .jpg na pasta images/ ou URLs externas
  */
 function getImagePath(imageName) {
-  if (!imageName) return 'images/ConnorDetroitBecomeHuman.svg';
-  if (imageName.includes('/') || imageName.endsWith('.svg') || imageName.endsWith('.jpg') || imageName.endsWith('.png')) {
+  if (!imageName) return 'images/ConnorDetroitBecomeHuman.jpg';
+
+  // Se já for uma URL externa (http/https/data/blob)
+  if (/^(https?:|\/\/|data:|blob:)/i.test(imageName)) {
     return imageName;
   }
-  return `images/${imageName}.svg`;
+
+  // Se já contiver o prefixo 'images/' ou '/images/'
+  if (imageName.startsWith('images/') || imageName.startsWith('/images/')) {
+    return imageName;
+  }
+
+  // Se contiver outra barra de diretório
+  if (imageName.includes('/')) {
+    return imageName;
+  }
+
+  // Se contiver extensão de imagem válida (.jpg, .png, etc.), prefixa com 'images/'
+  if (/\.(jpg|jpeg|png|webp|svg|gif|avif)$/i.test(imageName)) {
+    return `images/${imageName}`;
+  }
+
+  // Se for apenas o identificador puro (ex: 'ConnorDetroitBecomeHuman'), assume arquivo .jpg
+  return `images/${imageName}.jpg`;
 }
 
 /**
@@ -172,7 +191,7 @@ function createCardElement(char, isSlide = false) {
         alt="${char.name}"
         class="card-image"
         loading="lazy"
-        onerror="this.onerror=null; this.src='images/ConnorDetroitBecomeHuman.svg';"
+        onerror="this.onerror=null; this.src='images/ConnorDetroitBecomeHuman.jpg';"
       />
 
       <!-- Badge de Bloqueado / Misterioso -->

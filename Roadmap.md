@@ -32,13 +32,13 @@ Este documento é o plano oficial e rastreador de progresso do projeto. Cada eta
   - [x] Criação de suíte de testes com Supertest e banco em memória (`mongodb-memory-server`)
   - [x] 18 testes executados com 100% de sucesso (CRUD completo, filtros, validações de erro e 404)
 
-- [x] **Etapa 6 — Criação dos Placeholders de Imagens**
-  - [x] Criação dos arquivos de placeholder vetoriais padronizados para:
-    - Connor (`ConnorDetroitBecomeHuman.svg`)
-    - Arthur Morgan (`ArthurMorganRedDeadRedemption2.svg`)
-    - Doom Slayer (`DoomSlayerDoom.svg`)
-    - Bayonetta (`Bayonetta.svg`)
-    - Leon S. Kennedy (`ResidentLeon.svg`)
+- [x] **Etapa 6 — Imagens dos Personagens**
+  - [x] Imagens reais padronizadas em JPG vinculadas em `frontend/images` e `seedData.js`:
+    - Connor (`ConnorDetroitBecomeHuman.jpg`)
+    - Arthur Morgan (`ArthurMorganRedDeadRedemption2.jpg`)
+    - Veigar (`VeigarMecha.jpg`)
+    - Bayonetta (`Bayonetta.jpg`)
+    - Leon S. Kennedy (`ResidentLeon.jpg`)
 
 - [x] **Etapa 7 — Desenvolvimento do Frontend (HTML + CSS)**
   - [x] Estrutura semântica (`index.html`) com Navbar, Carrossel, Filtros, Grade de Cartas e Modal

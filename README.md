@@ -41,7 +41,7 @@ trabaiogustavis/
 │   ├── index.html           # Interface semântica
 │   ├── style.css            # Estilização TCG, raridades e animações
 │   ├── script.js            # JavaScript Vanilla puro (Fetch, Carrossel, Filtros)
-│   └── images/              # Placeholders SVG dos personagens
+│   └── images/              # Imagens JPG dos personagens
 ├── vercel.json              # Configuração para deploy na Vercel
 ├── api.md                   # Documentação detalhada da API REST
 ├── Roadmap.md               # Rastreamento de progresso por etapas
@@ -53,11 +53,11 @@ trabaiogustavis/
 
 ## ✦ Personagens Iniciais Cadastrados
 
-1. **Connor** — *Detroit: Become Human* | Legendary | R$ 150,00 (`ConnorDetroitBecomeHuman`)
-2. **Arthur Morgan** — *Red Dead Redemption 2* | Mythic | R$ 250,00 (`ArthurMorganRedDeadRedemption2`)
-3. **Doom Slayer** — *DOOM* | Epic | R$ 120,00 (`DoomSlayerDoom`)
-4. **Bayonetta** — *Bayonetta* | Rare | R$ 85,00 (`Bayonetta`)
-5. **Leon S. Kennedy** — *Resident Evil* | Legendary | R$ 190,00 (`ResidentLeon`)
+1. **Connor** — *Detroit: Become Human* | Legendary | R$ 150,00 (`ConnorDetroitBecomeHuman.jpg`)
+2. **Arthur Morgan** — *Red Dead Redemption 2* | Mythic | R$ 250,00 (`ArthurMorganRedDeadRedemption2.jpg`)
+3. **Veigar** — *Legends Of Runeterra* | Mythic | R$ 250,00 (`VeigarMecha.jpg`)
+4. **Bayonetta** — *Bayonetta* | Legendary | R$ 200,00 (`Bayonetta.jpg`)
+5. **Leon S. Kennedy** — *Resident Evil* | Rare | R$ 190,00 (`ResidentLeon.jpg`)
 
 ---
 

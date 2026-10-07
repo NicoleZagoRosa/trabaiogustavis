@@ -49,22 +49,22 @@ describe('API de Personagens de Jogos - Testes de Integração', () => {
   });
 
   // 3. Filtro por jogo
-  test('GET /api/characters?game=DOOM deve filtrar corretamente por jogo', async () => {
-    const res = await request(app).get('/api/characters?game=DOOM');
+  test('GET /api/characters?game=Runeterra deve filtrar corretamente por jogo', async () => {
+    const res = await request(app).get('/api/characters?game=Runeterra');
     assert.equal(res.status, 200);
     assert.equal(res.body.count, 1);
-    assert.equal(res.body.data[0].name, 'Doom Slayer');
-    assert.equal(res.body.data[0].game, 'DOOM');
+    assert.equal(res.body.data[0].name, 'Veigar');
+    assert.equal(res.body.data[0].game, 'Legends Of Runeterra');
   });
 
   // 4. Filtro por raridade
   test('GET /api/characters?rarity=Legendary deve filtrar por raridade', async () => {
     const res = await request(app).get('/api/characters?rarity=Legendary');
     assert.equal(res.status, 200);
-    assert.equal(res.body.count, 2); // Connor e Leon
+    assert.equal(res.body.count, 2); // Connor e Bayonetta
     const names = res.body.data.map((c) => c.name);
     assert.ok(names.includes('Connor'));
-    assert.ok(names.includes('Leon S. Kennedy'));
+    assert.ok(names.includes('Bayonetta'));
   });
 
   // 5. Filtro combinado por jogo e raridade
@@ -82,7 +82,7 @@ describe('API de Personagens de Jogos - Testes de Integração', () => {
     assert.equal(res.body.success, true);
     assert.equal(res.body.count, 5);
     assert.ok(res.body.data.includes('Red Dead Redemption 2'));
-    assert.ok(res.body.data.includes('Resident Evil'));
+    assert.ok(res.body.data.includes('Legends Of Runeterra'));
   });
 
   // 7. Obter por ID existente
