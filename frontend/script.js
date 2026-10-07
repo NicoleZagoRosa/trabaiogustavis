@@ -41,12 +41,12 @@ const FALLBACK_CHARACTERS = [
   },
   {
     id: '3',
-    name: 'Doom Slayer',
-    game: 'DOOM',
-    releaseDate: '2016-05-13',
-    image: 'DoomSlayerDoom',
-    rarity: 'Epic',
-    price: 120.00,
+    name: 'Veigar',
+    game: 'Legends Of Runeterra',
+    releaseDate: '2021-08-25',
+    image: 'VeigarMecha',
+    rarity: 'Mythic',
+    price: 250.00,
   },
   {
     id: '4',
@@ -54,8 +54,8 @@ const FALLBACK_CHARACTERS = [
     game: 'Bayonetta',
     releaseDate: '2009-10-29',
     image: 'Bayonetta',
-    rarity: 'Rare',
-    price: 85.00,
+    rarity: 'Legendary',
+    price: 200.00,
   },
   {
     id: '5',
@@ -63,7 +63,7 @@ const FALLBACK_CHARACTERS = [
     game: 'Resident Evil',
     releaseDate: '1998-01-21',
     image: 'ResidentLeon',
-    rarity: 'Legendary',
+    rarity: 'Rare',
     price: 190.00,
   },
 ];
